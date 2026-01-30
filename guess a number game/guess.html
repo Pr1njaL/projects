@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Number Guess</title>
+    <link rel="stylesheet" href="guess.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>🔮 Guess the Number</h1>
+        <p class="subtitle">Pick a number between 1 and 100</p>
+
+        <div class="stats-bar">
+            <span>Guesses Left: <strong id="remaining-count">10</strong></span>
+            <div class="progress-track">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input type="number" id="guessInput" placeholder="Enter number..." min="1" max="100">
+            <button id="submitBtn">Guess</button>
+        </div>
+
+        <div class="message-box">
+            <p id="message">Good Luck! Start guessing.</p>
+        </div>
+
+        <div class="history-section">
+            <p>Previous Guesses:</p>
+            <div id="prev-guesses" class="chips-container">
+                </div>
+        </div>
+
+        <button id="restartBtn" class="hidden">Play Again 🔄</button>
+    </div>
+
+    <script src="guess.js"></script>
+</body>
+</html>

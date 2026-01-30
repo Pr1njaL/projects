@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Catch the Apple 🍎</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #9be15d, #00e3ae);
+      font-family: "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+
+    .hud {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    #apple {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      animation: spin 2s linear infinite;
+      transition: transform 0.15s ease;
+      filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
+    }
+
+    #apple:hover {
+      transform: scale(1.15);
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .pop {
+      animation: pop 0.2s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.4) rotate(180deg); }
+      100% { transform: scale(1) rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hud">🍎 Score: <span id="score">0</span></div>
+
+  <img
+    id="apple"
+    src="https://png.pngtree.com/png-vector/20241020/ourlarge/pngtree-apple-without-background-png-image_14131729.png"
+    
+    
+    
+    alt="Apple"
+  />
+
+  <script>
+    const apple = document.getElementById("apple");
+    const scoreEl = document.getElementById("score");
+    let score = 0;
+
+    function spawnApple() {
+      const size = 80;
+      const x = Math.random() * (window.innerWidth - size);
+      const y = Math.random() * (window.innerHeight - size);
+
+      apple.style.left = x + "px";
+      apple.style.top = y + "px";
+    }
+
+    apple.addEventListener("click", () => {
+      score++;
+      scoreEl.textContent = score;
+
+      apple.classList.remove("pop");
+      void apple.offsetWidth; // restart animation
+      apple.classList.add("pop");
+
+      spawnApple();
+    });
+
+    spawnApple();
+  </script>
+
+</body>
+</html>
