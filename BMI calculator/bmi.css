@@ -1,4 +1,4 @@
-/* Reset basic margins */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     align-items: center;
 }
 
-/* The Main Card */
+
 .calculator-card {
     background: white;
     padding: 2rem;
@@ -29,7 +29,7 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
-/* Inputs */
+
 .input-group {
     text-align: left;
     margin-bottom: 1rem;
@@ -56,7 +56,7 @@ input:focus {
     border-color: #764ba2;
 }
 
-/* Button */
+
 button {
     width: 100%;
     padding: 12px;
@@ -74,13 +74,13 @@ button:hover {
     background: #5b3781;
 }
 
-/* Result Area */
+
 .result-box {
     margin-top: 20px;
     padding: 15px;
     border-radius: 8px;
     background: #f4f4f4;
-    display: none; /* Hidden by default */
+    display: none; 
 }
 
 #bmi-value {
@@ -91,4 +91,5 @@ button:hover {
 
 #bmi-status {
     font-weight: 600;
+
 }
