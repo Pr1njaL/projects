@@ -35,7 +35,7 @@ body {
 h1 { font-size: 2rem; margin-bottom: 5px; }
 .subtitle { color: #ccc; margin-bottom: 20px; font-size: 0.9rem; }
 
-/* Progress Bar */
+
 .stats-bar {
     margin-bottom: 20px;
     text-align: left;
@@ -92,7 +92,6 @@ button {
     margin-top: 20px;
 }
 
-/* Messages */
 .message-box {
     min-height: 50px;
     display: flex;
@@ -103,7 +102,7 @@ button {
     margin-bottom: 15px;
 }
 
-/* Chips for Previous Guesses */
+
 .chips-container {
     display: flex;
     flex-wrap: wrap;
@@ -121,7 +120,6 @@ button {
 
 .hidden { display: none; }
 
-/* Shake Animation Class */
 .shake {
     animation: shake 0.5s;
 }
@@ -132,4 +130,5 @@ button {
     50% { transform: translateX(5px); }
     75% { transform: translateX(-5px); }
     100% { transform: translateX(0); }
+
 }
