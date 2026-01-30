@@ -13,7 +13,7 @@ const gameContainer = document.querySelector('.game-container');
 
 submitBtn.addEventListener('click', checkGuess);
 
-// Allow pressing "Enter" key to submit
+
 inputField.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         checkGuess();
@@ -25,7 +25,7 @@ restartBtn.addEventListener('click', resetGame);
 function checkGuess() {
     const userGuess = parseInt(inputField.value);
 
-    // Validation
+    
     if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
         showMessage('⚠️ Please enter a number between 1 and 100', '#ff7675');
         return;
@@ -36,7 +36,7 @@ function checkGuess() {
         return;
     }
 
-    // Logic
+    
     guessesLeft--;
     previousGuesses.push(userGuess);
     updateStats(userGuess);
@@ -46,7 +46,7 @@ function checkGuess() {
     } else if (guessesLeft === 0) {
         endGame(false);
     } else {
-        // Wrong Guess
+        
         gameContainer.classList.add('shake');
         setTimeout(() => gameContainer.classList.remove('shake'), 500);
         
@@ -64,21 +64,21 @@ function checkGuess() {
 function updateStats(lastGuess) {
     remainingEl.innerText = guessesLeft;
     
-    // Add chip
+
     const chip = document.createElement('span');
     chip.classList.add('chip');
     chip.innerText = lastGuess;
     prevGuessesEl.appendChild(chip);
 
-    // Update Progress Bar Width
+    
     const percentage = (guessesLeft / 10) * 100;
     progressFill.style.width = percentage + '%';
 
-    // Update Progress Bar Color based on urgency
+    
     if (guessesLeft < 4) {
-        progressFill.style.backgroundColor = '#ff7675'; // Red warning
+        progressFill.style.backgroundColor = '#ff7675'; 
     } else if (guessesLeft < 7) {
-        progressFill.style.backgroundColor = '#fdcb6e'; // Yellow warning
+        progressFill.style.backgroundColor = '#fdcb6e'; 
     }
 }
 
@@ -120,4 +120,5 @@ function resetGame() {
     submitBtn.disabled = false;
     restartBtn.classList.add('hidden');
     inputField.focus();
+
 }
